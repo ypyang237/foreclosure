@@ -122,4 +122,73 @@ describe('foreclosure', function() {
 
   });
 
+  describe('borrower()', function() {
+    
+    describe('returns a literal object that', function() {
+      
+      var borrower;
+
+      beforeEach(function () {
+        var loan = GLOBAL.loan();
+        borrower = GLOBAL.borrower(loan);
+      });
+
+      describe('has a key named `getFunds`', function() {
+        
+        it('should be an unnamed function expression', function() {
+          borrower.should.have.property('getFunds');
+          (typeof borrower.getFunds).should.equal('function');
+        });
+
+        it('should create a closure when the function is invoked, and returns the value of the `funds` property of `account`', function() {
+          borrower.getFunds().should.equal(2800);
+        });
+
+      });
+
+      describe('has a key named `makePayment`', function() {
+        
+        it('should be an unnamed function expression', function() {
+          borrower.should.have.property('makePayment');
+          (typeof borrower.makePayment).should.equal('function');
+        });
+
+        it('should decrement `account.funds` by the amount defined by loan.getMonthlyPayment() if there are sufficient funds', function() {
+          borrower.getFunds().should.equal(2800);
+          borrower.makePayment();
+          borrower.getFunds().should.equal(1100);
+        });
+
+        it('should deplete `account.funds` if funds are less than the amount returned by loan.getMonthlyPayment()', function() {
+          borrower.getFunds().should.equal(2800);
+          borrower.makePayment();
+          borrower.getFunds().should.equal(1100);
+          borrower.makePayment();
+          borrower.getFunds().should.equal(0);
+          borrower.makePayment();
+          borrower.getFunds().should.equal(0);
+        });
+
+      });
+
+      describe('has a key named `payDay`', function() {
+        
+        it('should be an unnamed function expression', function() {
+          borrower.should.have.property('payDay');
+          (typeof borrower.payDay).should.equal('function');
+        });
+
+        it('should increment `account.funds` by the amount defined by `account.monthlyIncome`', function() {
+          borrower.getFunds().should.equal(2800);
+          borrower.payDay();
+          borrower.getFunds().should.equal(4150);
+        });
+
+      });
+
+    });
+
+  });
+
+
 });
