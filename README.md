@@ -5,7 +5,7 @@
 Fork and clone this project.  
 Open the `foreclosure.js` file in your editor.  
 Run `gulp watch` to auto-run tests.  
-Follow the instructions below, and every time you see this symbol ![Test](http://i.imgur.com/TOUBxO4.png) an additional test should pass.
+Follow the instructions below, and every time you see this symbol ![Test](http://i.imgur.com/aOEdoDc.png) an additional test should pass.
 
 ### Strict Mode
 
