@@ -71,6 +71,24 @@ Write the following statements inside the `borrower()` function block
   - key : `payDay`, value : an unnamed function expression that takes `0` arguments. ![Test][test]
     - Increase the value of the `funds` property of `account` by the value of the property `monthlyIncome` of `account` ![Test][test]
 
+### Set variables and "step forward in time"
+
+1. Invoke the `loan` function and assign it's return value to the variable `stevesLoan`. ![Test][test]
+1. Invoke the `borrower` function passing in the argument `stevesLoan` and assign it's return value to the variable `steve`. ![Test][test]
+1. Create a `while` loop that runs the following statement while `sevesLoan` is not foreclosed:
+  - `steve` invokes `payDay`
+  - `steve` invokes `makePayment`
+  - increment `month` by `1` ![Test][test]
+
+### Conclusion
+
+All tests should be passing.  
+The value of `monthsUntilEvicted` should be 13.  
+You can tweak some of hardcoded private values such as `loan account.monthlyPayment` and `borrower account.monthlyIncome` a little to inspect the different possible outcomes. however, _be careful!_ if the house never goes into foreclosure, you will encounter an endless loop.
+
+### Bonus
+
+Adjust the `while` loop to also exit when the house has been paid off.
 
 ## License
 

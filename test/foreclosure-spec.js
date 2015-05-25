@@ -190,5 +190,32 @@ describe('foreclosure', function() {
 
   });
 
+  it('should invoke the `loan` function and assign it\'s return value to the `stevesLoan` variable', function() {
+    GLOBAL.stevesLoan.should.have.property('getBalance');
+    GLOBAL.stevesLoan.should.have.property('receivePayment');
+    GLOBAL.stevesLoan.should.have.property('getMonthlyPayment');
+    GLOBAL.stevesLoan.should.have.property('isForeclosed');
+  });
+
+  it('should invoke the `borrower` function passing in the argument `stevesLoan` and assign it\'s return value to the variabl `steve`', function() {
+    GLOBAL.steve.should.have.property('getFunds');
+    GLOBAL.steve.should.have.property('makePayment');
+    GLOBAL.steve.should.have.property('payDay');
+  });
+
+  it('should invoke the `steve.payDay` and `steve.makePayment` functions and increment `month` by `1` while `stevesLoan` is not foreclosed', function() {
+    GLOBAL.month.should.equal(13);
+    GLOBAL.stevesLoan.getBalance().should.equal(265650);
+    GLOBAL.stevesLoan.isForeclosed().should.equal(true);
+    GLOBAL.steve.getFunds().should.equal(0);
+  });
+
+  describe('monthsUntilEvicted', function () {
+    it('should be 13', function() {
+      GLOBAL.monthsUntilEvicted.should.equal(13);
+    });
+  })
+
+
 
 });
