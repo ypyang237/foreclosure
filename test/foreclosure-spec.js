@@ -98,7 +98,7 @@ describe('foreclosure', function() {
           (typeof loan.isForeclosed).should.equal('function');
         });
 
-        it('should create a closure when the function is invoked, and returns the value of the `monthlyPayment` property of `account`', function() {
+        it('should create a closure when the function is invoked, and returns the value of the `foreclosed` property of `account`', function() {
           loan.isForeclosed().should.equal(false);
         });
 
