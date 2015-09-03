@@ -2,25 +2,25 @@
 
 ## Closure Exercise
 
-Fork and clone this project.  
-Open the `foreclosure.js` file in your editor.  
-Run `gulp watch` to auto-run tests.  
+Fork and clone this project.
+Open the `foreclosure.js` file in your editor.
+Run `gulp watch` to auto-run tests.
 Follow the instructions below, and every time you see this symbol ![Test](http://i.imgur.com/aOEdoDc.png) an additional test should pass.
 
 ### Strict Mode
 
-Use strict mode for this exercise. ![Test][test]  
+Use strict mode for this exercise. ![Test][test]
 
 ### Initialize variables
 
-1. Declare a variable named steve. ![Test][test]  
-1. Declare a variable named stevesLoan. ![Test][test]  
+1. Declare a variable named steve. ![Test][test]
+1. Declare a variable named stevesLoan. ![Test][test]
 1. Declare a variable named month, with an initial value of 0. ![Test][test]
-1. Declare a variable named monthsUntilEvicted. ![Test][test]  
+1. Declare a variable named monthsUntilEvicted. ![Test][test]
 
 ### loan()
 
-Declare a function named `loan()` that takes `0` arguments ![Test][test]  
+Declare a function named `loan()` that takes `0` arguments ![Test][test]
 
 Write the following statements inside the `loan()` function block
 
@@ -49,7 +49,7 @@ Write the following statements inside the `loan()` function block
 
 ### borrower()
 
-Declare a function named `borrower()` that takes `1` argument named `loan` ![Test][test]  
+Declare a function named `borrower()` that takes `1` argument named `loan` ![Test][test]
 
 Write the following statements inside the `borrower()` function block
 
@@ -75,15 +75,15 @@ Write the following statements inside the `borrower()` function block
 
 1. Invoke the `loan` function and assign it's return value to the variable `stevesLoan`. ![Test][test]
 1. Invoke the `borrower` function passing in the argument `stevesLoan` and assign it's return value to the variable `steve`. ![Test][test]
-1. Create a `while` loop that runs the following statement while `sevesLoan` is not foreclosed:
+1. Create a `while` loop that runs the following statement while `stevesLoan` is not foreclosed:
   - `steve` invokes `payDay`
   - `steve` invokes `makePayment`
   - increment `month` by `1` ![Test][test]
 
 ### Conclusion
 
-All tests should be passing.  
-The value of `monthsUntilEvicted` should be 13.  
+All tests should be passing.
+The value of `monthsUntilEvicted` should be 13.
 You can tweak some of hardcoded private values such as `loan account.monthlyPayment` and `borrower account.monthlyIncome` a little to inspect the different possible outcomes. however, _be careful!_ if the house never goes into foreclosure, you will encounter an endless loop.
 
 ### Bonus
