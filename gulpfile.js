@@ -1,10 +1,11 @@
 'use strict';
+
 var gulp   = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
 var paths = {
-  lint : ['./*.js'],
-  watch : ['./gulpfile.js', './foreclosure.js', './test/**/*.js', '!test/{temp,temp/**}'],
+  lint : ['./*.js', '!gulpfile.js'],
+  watch : ['gulpfile.js', './foreclosure.js', './test/**/*.js', '!test/{temp,temp/**}'],
   tests : ['./test/**/*.js', '!test/{temp,temp/**}']
 };
 
@@ -26,15 +27,17 @@ gulp.task('lint', function() {
 
 gulp.task('mocha', function() {
   return gulp.src(paths.tests)
-    .pipe(plugins.plumber(plumberConf))
-    .pipe(plugins.mocha());
+    .pipe(plugins.mocha({
+      reporter : 'spec',
+      bail : true
+    }))
 });
 
-gulp.task('watch', ['test'], function() {
+gulp.task('watch', function() {
   gulp.watch(paths.watch, ['test']);
 });
 
-gulp.task('test', ['lint', 'mocha']);
+gulp.task('test', ['lint', 'mocha', 'watch']);
 
 gulp.task('default', ['test']);
 
