@@ -2,10 +2,11 @@
 
 ## Closure Exercise
 
-Fork and clone this project.
-Open the `foreclosure.js` file in your editor.
-Run `gulp watch` to auto-run tests.
-Follow the instructions below, and every time you see this symbol ![Test](http://i.imgur.com/aOEdoDc.png) an additional test should pass.
+1. Fork and clone this project.
+1. Open the `foreclosure.js` file in your editor.
+1. Run `$ npm install` to install all needed packages for this project.
+1. Run `$ npm test` run the tests and have them continually watch for changes and re-run tests automatically.
+1. Follow the instructions below, and every time you see this symbol ![Test](http://i.imgur.com/aOEdoDc.png) an additional test should pass.
 
 ### Strict Mode
 
