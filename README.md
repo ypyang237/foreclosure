@@ -42,7 +42,7 @@ Write the following statements inside the `loan()` function block
   - key : `receivePayment`, value : an unnamed function expression that takes `1` argument named `amount`. ![Test][test]
     - Create a conditional statement that will run the following statements when `amount` is less than `account.monthlyPayment` :
       - invoke the `missPayment` function with `0` arguments
-    - Finally, decrement the value of the `balance` property of the `account` variable, by the value of the `amount` parameter. ![Test][test]
+    - Finally, decrement the value of the `balance` property ofthe `account` variable, by the value of the `amount` parameter. ![Test][test]
   - key : `getMonthlyPayment`, value : an unnamed function expression that takes `0` arguments. ![Test][test]
     - Create a closure by returning the value of `monthlyPayment` by accessing that property of the locally scoped variable `account`. ![Test][test]
   - key : `isForeclosed`, value : an unnamed function expression that takes `0` arguments. ![Test][test]
